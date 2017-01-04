@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="reviews">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie reviews</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div ng-controller="GetReviews">
+    <header>
+        <img ng-src={{nytLogo}} align="center">
+    </header>
+
+    <input type="number" ng-model="qty" value="20">
+
+    <div align="center" class="content" ng-repeat="rs in results| postFilter:qty">
+        <div class="display_title">{{rs.display_title}}</div>
+        <div class="mpaa_rating">{{rs.mpaa_rating}}</div>
+        <div class="summary_short">{{rs.summary_short}}</div>
+        <div class="publication_date">{{rs.publication_date}}</div>
+        <div class="picture"><img ng-src={{rs.multimedia.src}}></div>
+        <div class="suggested_link_text"><a ng-href={{rs.link.url}} class="link">{{rs.link.suggested_link_text}}</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+}
+
+.content{
+    width: 970px;
+    height: 300px;
+    border: 4px groove black; /* Параметры границы */
+    background: cornflowerblue; /* Цвет фона */
+    padding: 10px;
+
+}
